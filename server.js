@@ -7,6 +7,8 @@ var port = process.env.port || 8080;
 //Serve up files in public folder
 app.use(express.static('public'));
 
+app.use('/', express.static('public/index.html'));
+
 //Start up the website
 app.listen(port);
 console.log('Listening on port: ', port);
