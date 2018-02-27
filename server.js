@@ -4,10 +4,10 @@ var app = express();
 //Specify a port
 var port = process.env.port || 8080;
 
-//Serve up files in public folder
-app.use(express.static('public'));
+app.use(express.static('public'))
 
-app.use('/', express.static('public/index.html'));
+app.use((req, res) => res.sendFile('public/index.html'))
+
 
 //Start up the website
 app.listen(port);
