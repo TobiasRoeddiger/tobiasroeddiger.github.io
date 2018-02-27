@@ -5,7 +5,7 @@ var app = express();
 var port = process.env.port || 8080;
 
 //Serve up files in public folder
-app.use('/', express.static(__dirname + '/public'));
+app.use(express.static('public'));
 
 //Start up the website
 app.listen(port);
