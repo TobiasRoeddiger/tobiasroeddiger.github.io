@@ -8,6 +8,9 @@ app.use(express.static('public'))
 
 app.use((req, res) => res.sendFile('public/index.html'))
 
+app.get('/', (req, res) => {
+    return res.status(200).send('This is the root of my express application');
+});
 
 //Start up the website
 app.listen(port);
