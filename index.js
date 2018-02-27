@@ -1,12 +1,13 @@
-var express = require('express');
-var app = express();
+var express = require("express");
+var server = express();
+var http = require('http').Server(server);
 
-//Specify a port
-var port = process.env.port || 8080;
+server.use(express.static(__dirname + '/public'));
 
-//Serve up files in public folder
-app.use('/', express.static(__dirname + '/public'));
+server.get('/', function (req, res) {
+    res.sendFile(__dirname + '/index.html');
+});
 
-//Start up the website
-app.listen(port);
-console.log('Listening on port: ', port);
+var port = process.env.port || 1337;
+	http.listen(port, function () {
+});
