@@ -2,16 +2,23 @@
     <body>
         <div stlye="display: flex;">
             <div style="width: 20%; max-width: 200px;">
-                <button>Alpha</button>
-                <button>Beta</button>
-                <button>Gamma</button>
+                <button onclick="location1()">Location 1</button>
+                <button onclick="location2()">Location 2</button>
             </div>
             
-            <iframe style="width: 80%; height: 100%; border: 0;" frameBorder="0" src="https://gather.town/app/3MbcZp7uyEtB60z3/locationtest">
+            <iframe id="gather" style="width: 80%; height: 100%; border: 0;" frameBorder="0" src="https://gather.town/app/3MbcZp7uyEtB60z3/locationtest">
     
             </iframe>
         </div>
 
-        
+        <script>
+            function location1() {
+                document.getElementById('gather').src = "https://gather.town/app/3MbcZp7uyEtB60z3/locationtest?spawnToken=dAzF5UJ7vLPUVBEe";
+            }
+
+            function location2() {
+                document.getElementById('gather').src = "https://gather.town/app/3MbcZp7uyEtB60z3/locationtest?spawnToken=bgGQjl_Rr6YN7LzH"
+            }
+        </script>
     </body>
 </html>
